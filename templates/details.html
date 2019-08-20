@@ -4,21 +4,43 @@
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/details.js') }}"></script>
 {% endblock %}
 {% block content %}
-    <div><h2>Balance:</h2>
-        {{ asset_balance }}
+
+<div class="container">
+ 
+ <div class="col-9"><span><h2 style="text-align:center"><em class="fas fa-info-circle"></em>ASSET DETAILS & <em class="fas fa-burn"></em>BURN FORM</h2></span></div>
+
+        <div class="col-md-4"><h5>Balance:</h5>{{ asset_balance }}</div>
+
+<div class="row">
+        <div class="col-md-4"><h5>Asset Details:</h5></div>
+        <div class="col-md-4 offset-md-4"><h5>Name: {{ asset_details['name'].decode('utf-8') }}</h5></div>
+</div>
+
+        <div class="col-9"><h5>AssetId: {{ asset_details['assetId'] }}</h5></div>
+        <div class="col-9"><h5>Issuer: {{ asset_details['issuer'] }}</h5></div>
+        
+        <div class="col-9"><h5>Description: {{ asset_details['description'].decode('utf-8') }}</h5></div>
+        
+
+<div class="row">
+        <div class="col-md-4"><h5>Quantity: {{ asset_details['quantity']/(10**asset_details['decimals']) }}</h5></div>
+        <div class="col-md-4 offset-md-4"><h5>Decimals: {{ asset_details['decimals'] }}</h5></div>
+        </div>
+
+<div class="row">
+        <div class="col-md-4"><h5>Reissuable: {{ asset_details['reissuable'] }}</h5></div>
+        <div class="col-md-4 offset-md-4"><h5>Smart Asset: {{ asset_smart }} </h5>
+        <button type="button" class="btn btn-danger btn-circle" data-toggle="popover" title="Extra Fees" data-content="Transactions with smart assets cost more."><h5>?</h5></button>
+        </div>
     </div>
-    <div>
-        <h2>Asset Details:</h2>
-        AssetId: {{ asset_details['assetId'] }}<br>
-        Issuer: {{ asset_details['issuer'] }}<br>
-        Name: {{ asset_details['name'].decode('utf-8') }}<br>
-        Description: {{ asset_details['description'].decode('utf-8') }}<br>
-        Quantity: {{ asset_details['quantity']/(10**asset_details['decimals']) }}<br>
-        Decimals: {{ asset_details['decimals'] }}<br>
-        Reissuable: {{ asset_details['reissuable'] }}<br>
-        Smart Asset: {{ asset_smart }}, transactions with smart assets cost more.<br>
+
     </div>
-    <div>
+
+
+
+
+
+    <div class="container">
         <form id="send_form"><h2>Send:</h2>
             {% if asset_smart == True %}
                 <p>Fees: <input required id="send_fee" maxlength="35"
@@ -42,7 +64,10 @@
             </p>
         </form>
     </div>
-    <div>
+
+
+
+    <div class="container">
         <form id="burn_form"><h2>Burn:</h2>
             {% if asset_smart == True %}
                 <p>Fees: <input required id="burn_fee" maxlength="35"
@@ -64,8 +89,17 @@
             </p>
         </form>
     </div>
-    <div><h2>Mass Transfer:</h2>
-    </div>
-    <div><h2>Reissue:</h2>
-    </div>
+
+
+    <div class="container">
+        <div class="col-md-4"><h5>Mass Transfer:</h5></div>
+</div>
+
+
+
+    <div class="container">
+        <div class="col-md-4"><h5>Reissue:</h5></div>
+</div>
+
+
 {% endblock %}

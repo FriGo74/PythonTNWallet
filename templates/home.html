@@ -17,7 +17,7 @@
 
  <div class="col-9">
 <div class="badge badge-secondary"><span><h5>{{ address }}</span></h5></div>
-<button class="btn btn-outline-dark" data-clipboard-text="{{ address }}">
+<button class="btn btn-outline-dark" data-clipboard-text="{{ address }}"><i class="fas fa-copy"></i>
     Copy Address to clipboard
 </button>
 </div>
@@ -63,7 +63,7 @@ clipboard.on('error', function(e) {
      <input required id="send_fee_tn" maxlength="35" minlength="35" value="{{ (2000000 )/100000000+ extra_fees }}" class="form-control" placeholder="Fees">
     </div>
     <div class="col-md-4 offset-md-4"><span><h5>EXTRA FEES: {{ extra_fees }}</h5></span>
-      <button type="button" class="btn btn-danger btn-circle" data-toggle="popover" title="Extra Fees" data-content="When your account is scripted, extra fees will need to be paid. When this isn't scripted, nothing will be added."><h5>i</h5></button>
+      <button type="button" class="btn btn-danger btn-circle" data-toggle="popover" title="Extra Fees" data-content="When your account is scripted, extra fees will need to be paid. When this isn't scripted, nothing will be added."><h5>?</h5></button>
     </div>
   </div>
 
@@ -93,9 +93,7 @@ clipboard.on('error', function(e) {
     <h5 class="card-title">TRANSACTION HISTORY</h5>
     <button href="#" class="btn btn-outline-dark btn-lg" type="button" data-addr={{ address }} id="tx_load">Show tx history</button>
      <div class="collapse" id="tx_collapse_div"></div>
-     <br></br>
-     <div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div>
-  </div>
+      </div>
 </div>
    
 
@@ -106,9 +104,7 @@ clipboard.on('error', function(e) {
     <h5 class="card-title">ACTIVE LEASES</h5>
     <button href="#" class="btn btn-outline-dark btn-lg" type="button" data-addr={{ address }} id="lease_load">Show Active Leases</button>
      <div class="collapse" id="lease_collapse_div"></div>
-     <br></br>
-     <div class="card-footer"><small class="text-muted">Last updated 3 mins ago</small></div>
-  </div>
+     </div>
 </div>
 
 </div>
