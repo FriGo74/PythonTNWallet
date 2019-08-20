@@ -41,30 +41,37 @@
 
 
     <div class="container">
-        <form id="send_form"><h2>Send:</h2>
+
+        <form id="send_form">
+
+        <div class="col-md-4"><h2>SEND</h2></div>
             {% if asset_smart == True %}
-                <p>Fees: <input required id="send_fee" maxlength="35"
-                                minlength="35" value="{{ (2000000 + extra_fees+ 4000000)/100000000  }}"> $TN
-                </p>
+                
+                <div class="col-9"><h5>Fees: <input required id="send_fee" maxlength="35"
+                                minlength="35" value="{{ (2000000 + extra_fees+ 4000000)/100000000  }}">$TN</h5>
+            </div>
+
 
             {% else %}
-                <p>Fees: <input required id="send_fee" maxlength="35"
-                                minlength="35" value="{{ (2000000 + extra_fees)/100000000 }}"> $TN
-                </p>
+                <div class="col-9"><h5>Fees: <input required id="send_fee" maxlength="35"
+                                minlength="35" value="{{ (2000000 + extra_fees)/100000000 }}"> $TN</h5>
+            </div>
+
 
             {% endif %}
-            <p>Amount of ${{ asset_details['name'].decode('utf-8') }} to send: <input required id="send_amount" type="number"
-                                                                         max="{{ asset_balance }}">
-            </p>
-            <p>Destination addr: <input required id="send_addr" maxlength="35"
-                                        minlength="35"></p>
-            <p>
-                <button id="send" type="button" data-asset="{{ asset_details['assetId'] }}">Send
-                    ${{ asset_details['name'].decode('utf-8') }}</button>
-            </p>
+            <div class="col-9"><h5>Amount of ${{ asset_details['name'].decode('utf-8') }} to send: <input required id="send_amount"type="number" max="{{ asset_balance }}"></h5>
+        </div>
+
+            <div class="col-9"><h5>Destination addr: <input required id="send_addr" maxlength="35"
+                                        minlength="35"></h5>
+            </div>
+
+                <div class="col-md-4">
+
+                    <button id="send" class="btn btn-outline-dark btn-lg" type="button" data-asset="{{ asset_details['assetId'] }}"><h5>Send ${{ asset_details['name'].decode('utf-8') }}</h5></button>
+            </div>
         </form>
     </div>
-
 
 
     <div class="container">
