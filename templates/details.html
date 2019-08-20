@@ -7,7 +7,7 @@
 
 <div class="container">
  
- <div class="col-9"><span><h2 style="text-align:center"><em class="fas fa-info-circle"></em>ASSET DETAILS & <em class="fas fa-burn"></em>BURN FORM</h2></span></div>
+ <div class="col-9"><span><h2 style="text-align:center"><em class="fas fa-cogs"></em>ASSET DETAILS & UTILITIES</h2></span></div>
 
         <div class="col-md-4"><h5>Balance:</h5>{{ asset_balance }}</div>
 
@@ -59,11 +59,11 @@
 
 
             {% endif %}
-            <div class="col-9"><h5>Amount of ${{ asset_details['name'].decode('utf-8') }} to send: <input required id="send_amount"type="number" max="{{ asset_balance }}"></h5>
+            <div class="col-9"><h5>Amount of ${{ asset_details['name'].decode('utf-8') }} <input required id="send_amount"type="number" max="{{ asset_balance }}" placeholder="To Send"></h5>
         </div>
 
-            <div class="col-9"><h5>Destination addr: <input required id="send_addr" maxlength="35"
-                                        minlength="35"></h5>
+            <div class="col-9"><h5>Destination <input required id="send_addr" maxlength="35"
+                                        minlength="35" placeholder="Address"></h5>
             </div>
 
                 <div class="col-md-4">
@@ -74,28 +74,36 @@
     </div>
 
 
-    <div class="container">
-        <form id="burn_form"><h2>Burn:</h2>
+
+<div class="container">
+
+        <form id="burn_form">
+
+        <div class="col-md-4"><h2>BURN</h2></div>
             {% if asset_smart == True %}
-                <p>Fees: <input required id="burn_fee" maxlength="35"
-                                minlength="35" value="{{ (2000000 + extra_fees+ 4000000)/100000000  }}"> $TN
-                </p>
+                
+                <div class="col-9"><h5>Fees: <input required id="burn_fee" maxlength="35"
+                                minlength="35" value="{{ (2000000 + extra_fees+ 4000000)/100000000  }}"> $TN</h5>
+            </div>
+
 
             {% else %}
-                <p>Fees: <input required id="burn_fee" maxlength="35"
-                                minlength="35" value="{{ (2000000 + extra_fees)/100000000 }}"> $TN
-                </p>
+                <div class="col-9"><h5>Fees: <input required id="burn_fee" maxlength="35"
+                            minlength="35" value="{{ (2000000 + extra_fees)/100000000 }}"> $TN</h5>
+            </div>
+
 
             {% endif %}
-            <p>Amount of ${{ asset_details['name'].decode('utf-8') }} to burn: <input required id="burn_amount" type="number"
-                                                                         max="{{ asset_balance }}">
-            </p>
-            <p>
-                <button id="burn" type="button" data-asset="{{ asset_details['assetId'] }}">Burn
-                    ${{ asset_details['name'].decode('utf-8') }}</button>
-            </p>
+            <div class="col-9"><h5>Amount of ${{ asset_details['name'].decode('utf-8') }} <input required id="burn_amount"type="number" max="{{ asset_balance }}" placeholder="To Burn"></h5>
+        </div>
+
+            
+                <div class="col-md-4">
+                    <button id="burn" class="btn btn-outline-dark btn-lg" type="button" data-asset="{{ asset_details['assetId'] }}"><h5>Burn ${{ asset_details['name'].decode('utf-8') }}</h5></button></div>
         </form>
     </div>
+
+
 
 
     <div class="container">

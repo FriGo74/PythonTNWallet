@@ -17,7 +17,7 @@
 
  <div class="col-9">
 <div class="badge badge-secondary"><span><h5>{{ address }}</span></h5></div>
-<button class="btn btn-outline-dark" data-clipboard-text="{{ address }}"><i class="fas fa-copy"></i>
+<button class="btn btn-outline-dark" data-clipboard-text="{{ address }}"><em class="fas fa-copy"></em>
     Copy Address to clipboard
 </button>
 </div>
@@ -87,8 +87,8 @@ clipboard.on('error', function(e) {
 
 <div class=container-fluid>
 
-<div class="card border-light mb-3" style="max-width: 33rem">
-  <div class="card-header"><img src="static/img/tabs-iconset-history.png" class="img-card" alt="Responsive image"></div>
+<div class="card border-light mb-3" style="max-width: 55rem">
+  <div class="card-header"><img src="{{ url_for('static', filename='img/tabs-iconset-history.png') }}" class="img-card" alt="Responsive image"></div>
   <div class="card-body">
     <h5 class="card-title">TRANSACTION HISTORY</h5>
     <button href="#" class="btn btn-outline-dark btn-lg" type="button" data-addr={{ address }} id="tx_load">Show tx history</button>
@@ -96,16 +96,6 @@ clipboard.on('error', function(e) {
       </div>
 </div>
    
-
-
-<div class="card border-light mb-3" style="max-width: 33rem;">
-  <div class="card-header"><img src="static/img/tabs-iconset-leasing.png" class="img-card" alt="Responsive image"></div>
-  <div class="card-body">
-    <h5 class="card-title">ACTIVE LEASES</h5>
-    <button href="#" class="btn btn-outline-dark btn-lg" type="button" data-addr={{ address }} id="lease_load">Show Active Leases</button>
-     <div class="collapse" id="lease_collapse_div"></div>
-     </div>
-</div>
 
 </div>
 
