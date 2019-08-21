@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
 
-<div class="container">
+<div class="container-fluid">
  
  <div class="col-9"><span><h2 style="text-align:center"><em class="fas fa-cogs"></em>ASSET DETAILS & UTILITIES</h2></span></div>
 
@@ -37,14 +37,14 @@
     </div>
 
 
+<br></br>
 
 
-
-    <div class="container">
+    <div class="container-fluid">
 
         <form id="send_form">
 
-        <div class="col-md-4"><h2>SEND</h2></div>
+        <div class="col-md-4"><h2><em class="fas fa-arrow-alt-circle-right"></em>SEND</h2></div>
             {% if asset_smart == True %}
                 
                 <div class="col-9"><h5>Fees: <input required id="send_fee" maxlength="35"
@@ -74,12 +74,14 @@
     </div>
 
 
+<br></br>
 
-<div class="container">
+
+<div class="container-fluid">
 
         <form id="burn_form">
 
-        <div class="col-md-4"><h2>BURN</h2></div>
+        <div class="col-md-4"><h2><em class="fas fa-burn"></em>BURN</h2></div>
             {% if asset_smart == True %}
                 
                 <div class="col-9"><h5>Fees: <input required id="burn_fee" maxlength="35"
@@ -105,14 +107,18 @@
 
 
 
+<br></br>
 
-    <div class="container">
+
+    <div class="container-fluid">
         <div class="col-md-4"><h5>Mass Transfer:</h5></div>
 </div>
 
 
+<br></br>
 
-    <div class="container">
+
+    <div class="container-fluid">
         <div class="col-md-4"><h5>Reissue:</h5></div>
 </div>
 

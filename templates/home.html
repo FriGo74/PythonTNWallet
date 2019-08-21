@@ -18,7 +18,7 @@
  <div class="col-9">
 <div class="badge badge-secondary"><span><h5>{{ address }}</span></h5></div>
 <button class="btn btn-outline-dark" data-clipboard-text="{{ address }}"><em class="fas fa-copy"></em>
-    Copy Address to clipboard
+    Copy Address
 </button>
 </div>
 
@@ -88,9 +88,9 @@ clipboard.on('error', function(e) {
 <div class=container-fluid>
 
 <div class="card border-light mb-3" style="max-width: 55rem">
-  <div class="card-header"><img src="{{ url_for('static', filename='img/tabs-iconset-history.png') }}" class="img-card" alt="Responsive image"></div>
+  <div class="card-header" class="img-card" alt="Responsive image"><em class="fas fa-history"></em><h5>TRANSACTION HISTORY</h5></div>
   <div class="card-body">
-    <h5 class="card-title">TRANSACTION HISTORY</h5>
+    <h5 class="card-title"></h5>
     <button href="#" class="btn btn-outline-dark btn-lg" type="button" data-addr={{ address }} id="tx_load">Show tx history</button>
      <div class="collapse" id="tx_collapse_div"></div>
       </div>
